@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'simple.dart';
 import 'hard.dart';
 import './main_drawer.dart';
+import 'About_me.dart';
 void main() => runApp(SplashScreenPage());
 
 class MyApp extends StatelessWidget {
@@ -115,8 +116,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                     child: Text("Hard",style: TextStyle(fontSize: 35,color: Colors.redAccent),),
                   ),
-                )
+                ),
               ],
+            ),
+            SizedBox(
+              height: 100,
+              width: 100,
+            ),
+            Container(
+              height: 50, width: 150,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              margin: EdgeInsets.only(left: 20),
+              child: FlatButton(onPressed: (){
+                setState(() {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>about()));
+                });
+              },
+                child: Text("about me",style: TextStyle(fontSize:15,color: Colors.yellow),),
+              ),
             )
           ],
         ),
